@@ -12,13 +12,13 @@ const SignUpForm = () => {
 
     const [ formValues, setFormValues ] = useState(initialValues);
 
-    // const history = useHistory();
+    const { push } = useHistory();
 
     const signupSubmit = () => {
         axios.post(`https://buildweekproject.herokuapp.com/api/auth/register`, formValues)
           .then(res => {
             console.log('Here is the data: ', res.data);
-            // push('/itemList')
+            push('/login')
           })
           .catch(err => {
             console.log('Houston, we have a problem: ', err);

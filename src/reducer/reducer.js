@@ -1,4 +1,4 @@
-import { FETCH_ITEMS } from './../actions/actions';
+import { FETCH_ITEMS, LOGGED_IN, LOG_OUT } from './../actions/actions';
 
 const initialState = {
     items: [],
@@ -13,6 +13,16 @@ const itemReducer = (state = initialState, action) => {
                 ...state,
                 items: action.payload
             };
+        case LOGGED_IN:
+            return {
+                ...state,
+                isLoggedIn: (!state.isLoggedIn)
+            }
+        case LOG_OUT:
+            return {
+                ...state,
+                isLoggedIn: (!state.isLoggedIn)
+            }
         default:
             return state;
     }

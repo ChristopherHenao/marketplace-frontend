@@ -1,16 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux';
 
 const NavBar = () => {
 
     return (
         <div className="navbar">
-            <Link>Login</Link>
-            <Link>Add Produce</Link>
-            <Link>Edit Profile</Link>
+            <Link to="/register">Register</Link>
+            <Link to="/login">Login</Link>
+            <Link to="/add-produce">Add Produce</Link>
+            <Link to="/edit-profile">Edit Profile</Link>
             <Link>Logout</Link>
         </div>
     )
 }
 
-export default NavBar
+const mapStateToProps = (state) => {
+    return {
+        isLoggedIn: state.isLoggedIn
+    }
+}
+
+export default connect(mapStateToProps)(NavBar)

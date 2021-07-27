@@ -15,6 +15,7 @@ const ItemList = (props) => {
         })
     }
     
+    console.log(props.isLoggedIn)
 
     useEffect(() => {
         getItems()
@@ -35,7 +36,8 @@ const ItemList = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        items: state.items
+        items: state.items,
+        isLoggedIn: state.isLoggedIn
     }
 };
 
