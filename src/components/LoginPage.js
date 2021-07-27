@@ -47,25 +47,25 @@ const LoginPage = (props) => {
         <div className="login-form-container">
             <h1>Login to access owners page</h1>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="username">Username</label>
                 <input
-                    id="username" 
+                    id="login-username-input" 
                     type="text"
                     name= 'username'
                     placeholder='Username'
                     onChange={handleChanges}
                     value={formValues.username}
                 />
-                <label htmlFor="password">Password</label>
+                <br/>
                 <input
-                    id="password" 
+                    id="login-password-input" 
                     type='text'
                     name='password'
                     placeholder='Password'
                     onChange={handleChanges}
                     value={formValues.password}
                 />
-                <button>Login</button>
+                <br/>
+                <button id="login-button">Login</button>
        </form>
             
         </div>

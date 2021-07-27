@@ -38,38 +38,37 @@ const SignUpForm = () => {
     }
 
     return (
-        <div className="login-form-container">
+        <div className="register-form-container">
             <h1>Register to list your produce</h1>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="username">Username</label>
                 <input
-                    id="username" 
+                    id="register-username-input" 
                     type="text"
                     name= 'username'
                     placeholder='Username'
                     onChange={handleChanges}
                     value={formValues.username}
                 />
-                <label htmlFor="password">Password</label>
+                <br/>
                 <input
-                    id="password" 
+                    id="register-password-input" 
                     type='text'
                     name='password'
                     placeholder='Password'
                     onChange={handleChanges}
                     value={formValues.password}
                 />
-
+                <br/>
                 <input
-                    id="market" 
+                    id="market-input" 
                     type='text'
                     name='market'
-                    placeholder='market'
+                    placeholder='Market'
                     onChange={handleChanges}
                     value={formValues.market}
                 />
-
-                <button>Sign Up!</button>
+                <br/>
+                <button id="register-button">Sign Up!</button>
        </form>
             
         </div>
