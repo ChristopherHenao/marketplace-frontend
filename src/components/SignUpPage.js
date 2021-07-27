@@ -14,7 +14,7 @@ const SignUpForm = () => {
 
     // const history = useHistory();
 
-    const loginSubmit = () => {
+    const signupSubmit = () => {
         axios.post(`https://buildweekproject.herokuapp.com/api/auth/register`, formValues)
           .then(res => {
             console.log('Here is the data: ', res.data);
@@ -34,11 +34,12 @@ const SignUpForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        loginSubmit()
+        signupSubmit()
     }
 
     return (
         <div className="login-form-container">
+            <h1>Register to list your produce</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="username">Username</label>
                 <input
