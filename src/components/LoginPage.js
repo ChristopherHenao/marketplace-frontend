@@ -1,23 +1,30 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { loggedIn } from '../actions/actions'
 
 const initialValues  = {
     username: '',
     password: ''
 }
 
-const LoginPage = () => {
+const LoginPage = (props) => {
 
     const [ formValues, setFormValues ] = useState(initialValues);
 
-    // const history = useHistory();
+    const { push } = useHistory();
+
+    console.log(props)
 
     const loginSubmit = () => {
         axios.post(`https://buildweekproject.herokuapp.com/api/auth/login`, formValues)
           .then(res => {
-            console.log('Here is the data: ', res.data);
-            // push('/itemList')
+            // console.log(res.data.token);
+            localStorage.setItem('token', res.data.token)
+            props.dispatch(loggedIn())
+            // push('/')
+
           })
           .catch(err => {
             console.log('Houston, we have a problem: ', err);
@@ -65,4 +72,4 @@ const LoginPage = () => {
     )
 }
 
-export default LoginPage
+export default connect()(LoginPage)
