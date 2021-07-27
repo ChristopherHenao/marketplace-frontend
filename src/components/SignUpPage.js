@@ -1,20 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
 const initialValues  = {
     username: '',
-    password: ''
+    password: '',
+    market: ''
 }
 
-const LoginPage = () => {
+const SignUpForm = () => {
 
     const [ formValues, setFormValues ] = useState(initialValues);
 
     // const history = useHistory();
 
     const loginSubmit = () => {
-        axios.post(`https://buildweekproject.herokuapp.com/api/auth/login`, formValues)
+        axios.post(`https://buildweekproject.herokuapp.com/api/auth/register`, formValues)
           .then(res => {
             console.log('Here is the data: ', res.data);
             // push('/itemList')
@@ -57,11 +58,21 @@ const LoginPage = () => {
                     onChange={handleChanges}
                     value={formValues.password}
                 />
-                <button>Login</button>
+
+                <input
+                    id="market" 
+                    type='text'
+                    name='market'
+                    placeholder='market'
+                    onChange={handleChanges}
+                    value={formValues.market}
+                />
+
+                <button>Sign Up!</button>
        </form>
             
         </div>
     )
 }
 
-export default LoginPage
+export default SignUpForm
