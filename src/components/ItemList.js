@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import axios from 'axios'
+import ItemCard from './ItemCard'
 
 import { fetchItems } from '../actions/actions';
 import { connect } from 'react-redux';
@@ -24,9 +25,9 @@ const ItemList = (props) => {
     }
 
     return (
-        <div>
+        <div className="item-list">
             {props.items.map(item => {
-                return <p>{item.item_name}</p>
+                return <ItemCard item={item}/>
             })}
         </div>
     )

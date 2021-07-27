@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+
+.item-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item-card {
+  border: 1px solid black;
+  border-radius: 30px;
+  width: 48%;
+  margin: 2% auto;
+  padding: 2% 2%;
+}
+
+.navbar {
+  border: 1px solid black;
+  border-radius: 30px;
+  width: 80%;
+  margin: 2% auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: black;
+  
+}
