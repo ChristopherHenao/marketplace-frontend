@@ -69,6 +69,7 @@ const LoginPage = (props) => {
        </form>
             
         </div>
+        
     )
 }
 
