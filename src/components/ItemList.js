@@ -15,7 +15,7 @@ const ItemList = (props) => {
         })
     }
     
-    console.log(props.isLoggedIn)
+    // console.log(props.isLoggedIn)
 
     useEffect(() => {
         getItems()

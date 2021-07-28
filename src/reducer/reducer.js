@@ -16,12 +16,12 @@ const itemReducer = (state = initialState, action) => {
         case LOGGED_IN:
             return {
                 ...state,
-                isLoggedIn: (!state.isLoggedIn)
+                isLoggedIn: true
             }
         case LOG_OUT:
             return {
                 ...state,
-                isLoggedIn: (!state.isLoggedIn)
+                isLoggedIn: false
             }
         default:
             return state;

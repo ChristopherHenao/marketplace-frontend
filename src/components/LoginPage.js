@@ -23,7 +23,7 @@ const LoginPage = (props) => {
             // console.log(res.data.token);
             localStorage.setItem('token', res.data.token)
             props.dispatch(loggedIn())
-            // push('/')
+            push('/')
 
           })
           .catch(err => {
