@@ -1,25 +1,70 @@
-import React from 'react'
+import React, { useState } from 'react'
+import axiosWithAuth from '../utils/axiosWithAuth';
+
+const initialValues = {
+    item_name: '',
+    item_price: 0,
+    item_category: '',
+    item_description: '',
+}
 
 const AddItem = () => {
 
+    const [ addFormValues, setAddFormValues ] = useState(initialValues);
+
+    const addItem = () => {
+        axiosWithAuth()
+        .post('/items', {...addFormValues, id:Date.now()})
+            .then(res => {
+                console.log(res.data)
+            })
+            .catch(err => {
+                console.log('This did not work: ', err)
+            })
+    }
+
+    const handleChanges = (e) => {
+        setAddFormValues({
+            ...addFormValues,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        addItem()
+    }
+
+
     return (
         <div id="addItemFormContainer">
-            <form id="addItemForm">
+            <form id="addItemForm" onSubmit={handleSubmit}>
                 <div id="itemNameDiv">
-                    <label>Item name
-                        <input name="item_name" type="text"></input>
-                    </label>
+                    <label>Item Name: </label>
+                        <input 
+                            name="item_name" 
+                            type="text"
+                            value={addFormValues.item_name}
+                            onChange={handleChanges}
+                        />
                 </div>
 
                 <div id="itemPriceDiv">
-                    <label>Item price
-                        <input name="item_price" type="text"></input>
-                    </label>
+                    <label>Item Price: </label>
+                        <input 
+                            name="item_price" 
+                            type="number"
+                            value={addFormValues.item_price}
+                            onChange={handleChanges}
+                        />
                 </div>
 
                 <div id="itemCategoryDiv">
-                    <label>Item category
-                        <select name="item_category">
+                    <label>Item Category: </label>
+                        <select 
+                            name="item_category"
+                            value={addFormValues.item_category}
+                            onChange={handleChanges}>
                             <option>Animal Products</option>
                             <option>Beans</option>
                             <option>Cereals - Maize</option>
@@ -32,14 +77,18 @@ const AddItem = () => {
                             <option>Vegetables</option>
                             <option>Other</option>
                         </select>
-                    </label>
                 </div>
 
                 <div id="itemDescriptionDiv">
-                    <label>Item description
-                        <textarea name="item_description"></textarea>
-                    </label>
+                    <label>Item Description: </label>
+                    <br/>
+                        <textarea 
+                            name="item_description" 
+                            value={addFormValues.item_description}
+                            onChange={handleChanges}
+                        />
                 </div>
+                <button id="add-button">Add Item!</button>
             </form>
         </div>
     )
