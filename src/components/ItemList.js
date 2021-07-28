@@ -19,7 +19,7 @@ const ItemList = (props) => {
 
     useEffect(() => {
         getItems()
-    },[])
+    }, [])
 
     const handleFetchItems = (data) => {
         props.fetchItems(data)

@@ -139,6 +139,10 @@
   align-items:center;
 }
 
+#itemNameDiv {
+  margin-top: 10px;
+}
+
 #itemPriceDiv {
   margin-top: 10px;
   margin-bottom: 10px;

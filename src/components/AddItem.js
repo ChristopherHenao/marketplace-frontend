@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axiosWithAuth from '../utils/axiosWithAuth';
+import { useHistory } from 'react-router-dom';
 
 const initialValues = {
     item_name: '',
@@ -11,12 +12,14 @@ const initialValues = {
 const AddItem = () => {
 
     const [ addFormValues, setAddFormValues ] = useState(initialValues);
+    const { push } = useHistory();
 
     const addItem = () => {
         axiosWithAuth()
-        .post('/items', {...addFormValues, id:Date.now()})
+        .post('/items', addFormValues)
             .then(res => {
                 console.log(res.data)
+                push('/')
             })
             .catch(err => {
                 console.log('This did not work: ', err)
