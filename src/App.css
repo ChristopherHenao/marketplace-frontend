@@ -127,3 +127,39 @@
   margin: 4px 2px;
   cursor: pointer;
 }
+
+/* Add item form styles */
+
+#addItemForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: auto;
+  height: 40vh;
+  width: 60%;
+}
+
+#addItemForm :is(input, select, textarea, button) {
+  font-family: inherit;
+  box-sizing: border-box;
+  padding: 10px 2px;
+  border: 1px grey solid;
+  flex-grow: 1;
+}
+
+#addItemForm textarea {
+  resize: none;
+  height: 15vh;
+}
+
+#addItemForm > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+#addItemForm > div > label {
+  width: 20%;
+  text-align: left;
+  padding-right: 1%;
+}
