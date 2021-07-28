@@ -6,24 +6,28 @@ const AddItem = () => {
         <div id="addItemFormContainer">
             <form id="addItemForm">
                 <div id="itemNameDiv">
-                    <label>Item name</label>
+                    <label htmlFor="itemName">Item name</label>
                     <input
                         name="item_name"
+                        id="itemName"
                         type="text"
                         placeholder="Item name" />
                 </div>
 
                 <div id="itemPriceDiv">
-                    <label>Item price</label>
+                    <label htmlFor="itemPrice">Item price</label>
                     <input
                         name="item_price"
+                        id="itemPrice"
                         type="text"
                         placeholder="Item price" />
                 </div>
 
                 <div id="itemCategoryDiv">
-                    <label>Item category</label>
-                    <select name="item_category">
+                    <label htmlFor="itemCategory">Item category</label>
+                    <select
+                        id="itemCategory"
+                        name="item_category">
                         <option>Animal Products</option>
                         <option>Beans</option>
                         <option>Cereals - Maize</option>
@@ -39,9 +43,10 @@ const AddItem = () => {
                 </div>
 
                 <div id="itemDescriptionDiv">
-                    <label>Item description</label>
+                    <label htmlFor="itemDescription">Item description</label>
                     <textarea
                         placeholder="Item description"
+                        id="itemDescription"
                         name="item_description">
                     </textarea>
                 </div>
