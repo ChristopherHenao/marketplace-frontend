@@ -1,5 +1,16 @@
+:root {
+  --bg-color: #233D4D;
+  --nav-color: #FE7F2D;
+  --fg-color: #A1C181;
+  --btn-color: #FCCA46;
+}
+
 .App {
   text-align: center;
+}
+
+body {
+  background-color: var(--bg-color);
 }
 
 .App-logo {
@@ -52,11 +63,13 @@
 
 .navbar {
   border: 1px solid black;
-  border-radius: 30px;
+  border-radius: 10px;
+  padding: 1%;
   width: 80%;
   margin: 2% auto;
   display: flex;
   justify-content: space-evenly;
+  background-color: var(--nav-color);
 }
 
 .navbar a {
@@ -67,7 +80,7 @@
 /* Login Page styling  */
 
 .login-form-container {
-  background-color:rgb(130, 19, 145);
+  background-color: var(--fg-color);
   border-radius: 15px;
   display:flex;
   flex-direction:column;
@@ -81,10 +94,9 @@
 }
 
 #login-button {
-  background-color: #da9606;
+  background-color: var(--btn-color);
   border: none;
   border-radius:10px;
-  color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
