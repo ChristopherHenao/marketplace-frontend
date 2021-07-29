@@ -6,6 +6,7 @@ import NavBar from './components/NavBar'
 import LoginPage from './components/LoginPage';
 import SignUpForm from './components/SignUpPage';
 import AddItem from './components/AddItem'
+import PrivateRoute from './components/PrivateRoute'
 
 
 function App() {
@@ -14,18 +15,21 @@ function App() {
       <NavBar/>
 
       <Switch>
-        <Route exact path="/">
-          <ItemList />
-        </Route>
+
+        <PrivateRoute exact path="/add-produce" component={AddItem}/>
+        
         <Route exact path="/login">
           <LoginPage />
         </Route>
+
         <Route exact path="/register">
           <SignUpForm />
         </Route>
-        <Route exact path="/add-produce">
-          <AddItem/>
+
+        <Route exact path="/">
+          <ItemList />
         </Route>
+
       </Switch>
     </div>
   );

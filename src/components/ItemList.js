@@ -23,7 +23,7 @@ const ItemList = (props) => {
             console.log('This is not working: ', err);
         })
     }
-    
+
     useEffect(() => {
         getItems()
     },[]) // eslint-disable-line
