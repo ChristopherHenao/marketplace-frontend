@@ -20,8 +20,6 @@ const ItemList = (props) => {
             handleFetchItems(res.data);
         })
     }
-    
-    // console.log(props.isLoggedIn)
 
     useEffect(() => {
         getItems()
