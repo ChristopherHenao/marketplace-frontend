@@ -20,7 +20,6 @@ const LoginPage = (props) => {
     const loginSubmit = () => {
         axios.post(`https://buildweekproject.herokuapp.com/api/auth/login`, formValues)
           .then(res => {
-            // console.log(res);
             localStorage.setItem('token', res.data.token)
             props.dispatch(loggedIn())
             push('/')

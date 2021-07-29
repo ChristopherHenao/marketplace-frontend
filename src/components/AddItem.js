@@ -20,7 +20,6 @@ const AddItem = () => {
         axiosWithAuth()
         .post('/items', addFormValues)
             .then(res => {
-                // console.log(res.data)
                 push('/');
             })
             .catch(err => {
