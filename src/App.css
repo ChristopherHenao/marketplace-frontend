@@ -142,7 +142,7 @@ body {
 
 /* Add Item Form Styling */
 
-#addItemFormContainer {
+/* #addItemFormContainer {
   background-color:rgb(150, 16, 78);
   border-radius: 15px;
   display:flex;
@@ -180,4 +180,45 @@ body {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+} */
+
+#addItemForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: auto;
+  height: 50vh;
+  width: 60%;
+  background-color: var(--fg-color);
+  padding: 1%;
+  border-radius: 10px;
+}
+
+#addItemForm :is(input, select, textarea, button) {
+  font-family: inherit;
+  box-sizing: border-box;
+  padding: 10px 2px;
+  border: 1px grey solid;
+  flex-grow: 1;
+}
+
+#addItemForm textarea {
+  resize: none;
+  height: 15vh;
+}
+
+#addItemForm > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+#addItemForm > div > label {
+  width: 20%;
+  text-align: left;
+  padding-right: 1%;
+}
+
+#add-button {
+  max-height: 5vh;
 }
