@@ -4,8 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 const initialValues  = {
     username: '',
-    password: '',
-    market: ''
+    password: ''
 }
 
 const SignUpForm = () => {
@@ -57,15 +56,6 @@ const SignUpForm = () => {
                     placeholder='Password'
                     onChange={handleChanges}
                     value={formValues.password}
-                />
-                <br/>
-                <input
-                    id="market-input" 
-                    type='text'
-                    name='market'
-                    placeholder='Market'
-                    onChange={handleChanges}
-                    value={formValues.market}
                 />
                 <br/>
                 <button id="register-button">Sign Up!</button>
