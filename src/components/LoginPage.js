@@ -65,10 +65,8 @@ const LoginPage = (props) => {
                 />
                 <br/>
                 <button id="login-button">Login</button>
-       </form>
-            
+            </form>  
         </div>
-        
     )
 }
 
