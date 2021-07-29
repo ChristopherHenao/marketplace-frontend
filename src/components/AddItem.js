@@ -1,22 +1,27 @@
 import React, { useState } from 'react'
 import axiosWithAuth from '../utils/axiosWithAuth';
+import { useHistory } from 'react-router-dom';
 
 const initialValues = {
     item_name: '',
     item_price: 0,
     item_category: '',
-    item_description: '',
+    market_id: 0,
+    item_description: ''
 }
 
 const AddItem = () => {
 
     const [ addFormValues, setAddFormValues ] = useState(initialValues);
 
+    const { push } = useHistory()
+
     const addItem = () => {
         axiosWithAuth()
-        .post('/items', {...addFormValues, id:Date.now()})
+        .post('/items', addFormValues)
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
+                push('/');
             })
             .catch(err => {
                 console.log('This did not work: ', err)
@@ -77,6 +82,19 @@ const AddItem = () => {
                             <option>Vegetables</option>
                             <option>Other</option>
                         </select>
+                </div>
+                <div id="itemMarketDiv">
+                    <label>Item Market: </label>
+                    <select 
+                        name="market_id"
+                        value={addFormValues.market_id}
+                        onChange={handleChanges}>
+                        <option value={1}>South Africa</option>
+                        <option value={2}>Middle Africa</option>
+                        <option value={3}>East Africa</option>
+                        <option value={4}>West Africa</option>
+                        <option value={5}>North Africa</option>
+                    </select>
                 </div>
 
                 <div id="itemDescriptionDiv">
