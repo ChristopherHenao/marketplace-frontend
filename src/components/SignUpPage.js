@@ -16,7 +16,6 @@ const SignUpForm = () => {
     const signupSubmit = () => {
         axios.post(`https://buildweekproject.herokuapp.com/api/auth/register`, formValues)
           .then(res => {
-            console.log('Here is the data: ', res.data);
             push('/login')
           })
           .catch(err => {
@@ -59,8 +58,7 @@ const SignUpForm = () => {
                 />
                 <br/>
                 <button id="register-button">Sign Up!</button>
-       </form>
-            
+            </form>
         </div>
     )
 }

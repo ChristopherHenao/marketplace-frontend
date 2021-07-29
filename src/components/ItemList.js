@@ -19,13 +19,14 @@ const ItemList = (props) => {
         .then(res => {
             handleFetchItems(res.data);
         })
+        .catch(err => {
+            console.log('This is not working: ', err);
+        })
     }
     
-    // console.log(props.isLoggedIn)
-
     useEffect(() => {
         getItems()
-    },[])
+    },[]) // eslint-disable-line
 
     const handleFetchItems = (data) => {
         props.fetchItems(data)
@@ -38,7 +39,7 @@ const ItemList = (props) => {
         })
     };
 
-    let marketArray = props.items.filter(item => item.market_id == marketValue.market_id)
+    let marketArray = props.items.filter(item => item.market_id == marketValue.market_id) // eslint-disable-line
 
     
     return (
@@ -59,7 +60,7 @@ const ItemList = (props) => {
                 <br/>
             </div>
             <div className="item-list">
-                {marketValue.market_id == 0 ? 
+                {marketValue.market_id == 0 ? // eslint-disable-line
                 props.items.map(item => {return <ItemCard key={item.item_id} item={item}/>}) 
                 : 
                 marketArray.map(item => {return <ItemCard key={item.item_id} item={item}/>})}
