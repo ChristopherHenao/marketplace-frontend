@@ -36,7 +36,8 @@ const SignUpForm = () => {
     }
 
     return (
-        <div className="register-form-container">
+        <div className="login-form-container">
+            <div className="login-form-subcontainer">
             <h1>Register to list your produce</h1>
             <form onSubmit={handleSubmit}>
                 <input
@@ -57,8 +58,9 @@ const SignUpForm = () => {
                     value={formValues.password}
                 />
                 <br/>
-                <button id="register-button">Sign Up!</button>
+                <button className="login-button">Sign Up!</button>
             </form>
+            </div>
         </div>
     )
 }

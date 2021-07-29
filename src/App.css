@@ -1,5 +1,20 @@
+/* * {
+  border: 1px red solid;
+} */
+
+:root {
+  --bg-color: #233D4D;
+  --nav-color: #FE7F2D;
+  --fg-color: #A1C181;
+  --btn-color: #FCCA46;
+}
+
 .App {
   text-align: center;
+}
+
+body {
+  background-color: var(--bg-color);
 }
 
 .App-logo {
@@ -37,13 +52,33 @@
   }
 }
 
+h4, h5 {
+  font-weight: normal;
+}
+
+.item-list-container :is(select, button) {
+  font-family: inherit;
+  padding: 7px 2px;
+  box-sizing: border-box;
+}
+
+#itemMarketDiv {
+  width: 60%;
+  background-color: var(--fg-color);
+  border-radius: 10px;
+  padding: 1%;
+  margin: auto;
+}
+
 .item-list {
   display: flex;
   flex-wrap: wrap;
 }
 
 .item-card {
+  background-color: #619B8A;
   border: 1px solid black;
+  font-weight: normal;
   border-radius: 30px;
   width: 25%;
   margin: 2% auto;
@@ -52,11 +87,13 @@
 
 .navbar {
   border: 1px solid black;
-  border-radius: 30px;
+  border-radius: 10px;
+  padding: 1%;
   width: 80%;
   margin: 2% auto;
   display: flex;
   justify-content: space-evenly;
+  background-color: var(--nav-color);
 }
 
 .navbar a {
@@ -64,61 +101,62 @@
   color: black;
 }
 
-/* Login Page styling  */
+.navbar a:hover {
+  color: #f1f1f1;
+}
+
+/* Login Page & Sign up styling  */
 
 .login-form-container {
-  background-color:rgb(130, 19, 145);
+  display: flex;
+  justify-content: center;
+}
+
+.login-form-subcontainer {
   border-radius: 15px;
   display:flex;
   flex-direction:column;
   justify-content: center;
   align-items:center;
+  width: 60%;
+  box-sizing: border-box;
 }
 
-#login-password-input {
-  margin-bottom: 10px;
-  margin-top: 10px;
+.login-form-subcontainer h1 {
+  box-sizing: border-box;
+  background-color: var(--fg-color);
+  width: 100%;
+  padding: 1%;
+  border-radius: 10px;
+  font-weight: normal;
 }
 
-#login-button {
-  background-color: #da9606;
+.login-form-container form {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: auto;
+  height: 24vh;
+  width: 100%;
+  background-color: var(--fg-color);
+  padding: 1%;
+  border-radius: 10px;
+}
+
+.login-form-container form :is(input, select, textarea, button) {
+  font-family: inherit;
+  box-sizing: border-box;
+  padding: 10px 2px;
+  border: 1px grey solid;
+  flex-grow: 1;
+  /* max-height: 5vh; */
+}
+
+.login-button {
+  background-color: var(--btn-color);
   border: none;
   border-radius:10px;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-
-/*Sign Up Page styling */
-
-.register-form-container {
-  background-color:rgb(143, 56, 56);
-  border-radius: 15px;
-  display:flex;
-  flex-direction:column;
-  justify-content: center;
-  align-items:center;
-}
-
-#register-password-input {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-#market-input {
-  margin-bottom: 10px;
-}
-
-#register-button {
-  background-color: #da9606;
-  border: none;
-  border-radius:10px;
-  color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -130,42 +168,43 @@
 
 /* Add Item Form Styling */
 
-#addItemFormContainer {
-  background-color:rgb(150, 16, 78);
-  border-radius: 15px;
-  display:flex;
-  flex-direction:column;
-  justify-content: center;
-  align-items:center;
+#addItemForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: auto;
+  height: 50vh;
+  width: 60%;
+  background-color: var(--fg-color);
+  padding: 1%;
+  border-radius: 10px;
 }
 
-#itemPriceDiv {
-  margin-top: 10px;
-  margin-bottom: 10px;
+#addItemForm :is(input, select, textarea, button) {
+  font-family: inherit;
+  box-sizing: border-box;
+  padding: 10px 2px;
+  border: 1px grey solid;
+  flex-grow: 1;
 }
 
-#itemCategoryDiv {
-  margin-bottom: 10px;
+#addItemForm textarea {
+  resize: none;
+  height: 15vh;
 }
 
-#itemMarketDiv {
-  margin-bottom: 10px;
+#addItemForm > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
-#itemDescriptionDiv {
-  margin-bottom: 10px;
+#addItemForm > div > label {
+  width: 20%;
+  text-align: left;
+  padding-right: 1%;
 }
 
 #add-button {
-  background-color: #da9606;
-  border: none;
-  border-radius:10px;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
+  max-height: 5vh;
 }

@@ -44,6 +44,7 @@ const LoginPage = (props) => {
 
     return (
         <div className="login-form-container">
+            <div className="login-form-subcontainer">
             <h1>Login to access owners page</h1>
             <form onSubmit={handleSubmit}>
                 <input
@@ -64,8 +65,9 @@ const LoginPage = (props) => {
                     value={formValues.password}
                 />
                 <br/>
-                <button id="login-button">Login</button>
-            </form>  
+                <button className="login-button">Login</button>
+            </form>
+            </div>  
         </div>
     )
 }

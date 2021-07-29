@@ -21,7 +21,7 @@ const handleLogout = () => {
             <div className="navbar">
             <Link to="/">Home</Link>
             <Link to="/add-produce">Add Produce</Link>
-            <Link to="/edit-profile">Edit Profile</Link>
+            {/* <Link to="/edit-profile">Edit Profile</Link> */}
             <Link onClick={handleLogout}>Logout</Link>
             </div> 
             : 

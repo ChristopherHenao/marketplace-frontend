@@ -43,7 +43,7 @@ const ItemList = (props) => {
 
     
     return (
-        <div>
+        <div class="item-list-container">
             <div id="itemMarketDiv">
                 <label>Market Location: </label>
                 <select 
