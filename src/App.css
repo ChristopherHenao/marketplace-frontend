@@ -62,13 +62,13 @@ h4, h5 {
   box-sizing: border-box;
 }
 
-/* #itemMarketDiv {
-  width: 99%;
+#marketLocationDiv {
+  width: 50%;
   background-color: var(--fg-color);
   border-radius: 10px;
   padding: 1%;
   margin: auto;
-} */
+}
 
 .item-list {
   display: flex;
