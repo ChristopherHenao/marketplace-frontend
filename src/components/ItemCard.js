@@ -10,7 +10,7 @@ const ItemCard = (props) => {
             <h5>Price: {item.item_price}</h5>
             <h5>Category: {item.item_category}</h5>
             <h5>{item.item_description}</h5>
-            <button>Add to cart</button>
+            <button className="cart-button">Add to cart</button>
         </div>
     )
 }
